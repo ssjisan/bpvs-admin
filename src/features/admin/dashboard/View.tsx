@@ -1,0 +1,1 @@
+'use client';import {Dashboard} from '@/features/shared/Dashboard';import {useAuth} from '@/context/Auth';export default function View(){const {user}=useAuth();if(!user)return null;return <Dashboard manufacturer={false}/>}

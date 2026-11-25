@@ -1,0 +1,1 @@
+export interface ApprovalReportRow { _id:string; entityType?:string; entity?:string | {_id?:string;name?:string;batchId?:string}; decision?:string; remarks?:string; createdAt?:string; startDate?:string; endDate?:string }

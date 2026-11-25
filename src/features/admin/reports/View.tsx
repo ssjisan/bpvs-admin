@@ -1,0 +1,1 @@
+'use client';import {Reports} from '@/features/admin/Reports';import {useAuth} from '@/context/Auth';export default function View(){const {user}=useAuth();if(!user)return null;return <Reports user={user}/>}

@@ -1,0 +1,1 @@
+'use client';import {Profile} from '@/features/shared/Profile';import {useAuth} from '@/context/Auth';export default function View(){const {user}=useAuth();if(!user)return null;return <Profile user={user} company={true}/>}

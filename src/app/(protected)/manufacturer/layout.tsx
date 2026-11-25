@@ -1,0 +1,1 @@
+import {Workspace} from '@/components/Workspace';import type {ReactNode} from 'react';export default function Layout({children}:{children:ReactNode}){return <Workspace kind='manufacturer'>{children}</Workspace>}

@@ -1,0 +1,6 @@
+'use client';
+import {createContext,useContext,useEffect,useState,type ReactNode} from 'react';import {ThemeProvider,CssBaseline} from '@mui/material';import theme from '@/theme';import {api,clearTokens} from '@/api';import type {User} from '@/types';
+export function workspace(u:User){return u.manufacturer?'manufacturer':u.role.name==='INSPECTOR'?null:'admin'}
+const Auth=createContext<{user:User|null;loading:boolean;me:()=>Promise<void>;logout:()=>Promise<void>}|null>(null);
+export function Providers({children}:{children:ReactNode}){const [user,U]=useState<User|null>(null),[loading,L]=useState(true);async function me(){const {data}=await api.get<User>('/auth/me');U(data)}async function logout(){try{await api.post('/auth/logout')}finally{clearTokens();U(null)}}useEffect(()=>{const reset=()=>U(null);window.addEventListener('bpvs:logout',reset);if(localStorage.getItem('bpvs.access'))me().catch(()=>{clearTokens();U(null)}).finally(()=>L(false));else L(false);return()=>window.removeEventListener('bpvs:logout',reset)},[]);return <ThemeProvider theme={theme}><CssBaseline/><Auth.Provider value={{user,loading,me,logout}}>{children}</Auth.Provider></ThemeProvider>}
+export function useAuth(){const a=useContext(Auth);if(!a)throw Error('Missing Auth provider');return a}

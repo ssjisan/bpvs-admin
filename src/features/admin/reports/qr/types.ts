@@ -1,0 +1,1 @@
+export interface QRReportRow { _id:string; qrId?:string; batch?:string | {_id?:string;name?:string;batchId?:string}; keyId?:string; expiresAt?:string; revoked?:boolean; createdAt?:string; startDate?:string; endDate?:string }

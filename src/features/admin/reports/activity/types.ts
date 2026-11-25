@@ -1,0 +1,1 @@
+export interface AuditReportRow { _id:string; action?:string; entity?:string | {_id?:string;name?:string;batchId?:string}; entityId?:string; actor?:string | {_id?:string;name?:string;batchId?:string}; createdAt?:string; startDate?:string; endDate?:string }

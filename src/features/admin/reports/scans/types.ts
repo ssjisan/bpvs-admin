@@ -1,0 +1,1 @@
+export interface ScanReportRow { _id:string; officer?:string | {_id?:string;name?:string;batchId?:string}; batch?:string | {_id?:string;name?:string;batchId?:string}; result?:string; observedAt?:string; createdAt?:string; startDate?:string; endDate?:string }

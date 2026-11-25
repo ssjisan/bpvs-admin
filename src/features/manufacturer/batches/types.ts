@@ -1,0 +1,1 @@
+export interface BatchRow { _id:string; batchId?:string; bagSize?:string; quantity?:number; reportedPrinted?:number; distributionArea?:string; status?:string; productionStatus?:string; startDate?:string; endDate?:string }

@@ -1,0 +1,1 @@
+export interface ViolationReportRow { _id:string; type?:string; batch?:string | {_id?:string;name?:string;batchId?:string}; remarks?:string; status?:string; createdAt?:string; startDate?:string; endDate?:string }

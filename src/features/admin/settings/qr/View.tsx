@@ -1,0 +1,1 @@
+'use client';import {Settings} from '@/features/admin/Settings';import {useAuth} from '@/context/Auth';export default function View(){const {user}=useAuth();if(!user)return null;return <Settings/>}
